@@ -1,0 +1,104 @@
+/* Style dla metaboksów wtyczki Physis */
+
+.moj-system-pole {
+    margin-bottom: 15px;
+}
+.moj-system-pole label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.moj-system-pole input[type=text],
+.moj-system-pole input[type=url], /* Dodane dla spójności */
+.moj-system-pole textarea,
+.moj-system-pole select { /* Dodane dla spójności */
+    width: 100%;
+}
+
+/* Style specyficzne dla metaboxa partii produkcyjnych */
+#partie-produkcyjne-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+#partie-produkcyjne-wrapper th,
+#partie-produkcyjne-wrapper td {
+    border: 1px solid #ccd0d4; /* Użyto standardowego koloru obramowania WP */
+    padding: 8px;
+    text-align: left;
+    vertical-align: top; /* Lepsze wyrównanie przy różnej wysokości pól */
+}
+#partie-produkcyjne-wrapper th {
+    background-color: #f5f5f5;
+}
+#partie-produkcyjne-wrapper input[type=text],
+#partie-produkcyjne-wrapper input[type=date],
+#partie-produkcyjne-wrapper input[type=number] {
+    width: 100%; /* Już pokryte przez .moj-system-pole, ale dla pewności */
+}
+#partie-produkcyjne-wrapper .remove-row-button {
+    color: #a00;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Lepsze klikanie */
+    padding: 2px 5px;
+}
+#partie-produkcyjne-wrapper .remove-row-button:hover {
+    color: #d00;
+}
+
+#partie-produkcyjne-wrapper #add-partia-row {
+    margin-top: 10px;
+}
+
+/* Ukryty szablon wiersza - upewnijmy się, że jest niewidoczny */
+#partia-template {
+    display: none;
+}
+/* --- Style dla opcji eksportu na stronie wyszukiwania --- */
+
+/* Kontener dla opcji eksportu - oddzielenie od przycisków formularza */
+#physis-export-options {
+    clear: both; /* Zapobiega opływaniu przez poprzednie elementy */
+    margin-top: 20px; /* Dodaje odstęp od góry */
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd; /* Opcjonalna linia oddzielająca */
+}
+
+/* Kontener z checkboxami - ustawienie wielokolumnowe */
+#physis-export-cols-checkboxes {
+    /* Układ 3-kolumnowy */
+    column-count: 3;
+    column-gap: 20px; /* Odstęp między kolumnami */
+
+    /* Dodatkowe style dla wyglądu */
+    background-color: #ffffff;
+    border: 1px solid #ccd0d4; /* Standardowy border WP */
+    padding: 15px;
+    margin-top: 5px;
+    /* Maksymalna wysokość i przewijanie (już masz w inline, ale lepiej tu) */
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Etykiety checkboxów w układzie kolumnowym */
+#physis-export-cols-checkboxes label {
+    display: block; /* Każda etykieta w nowej linii wewnątrz kolumny */
+    margin-bottom: 8px;
+    /* Zapobiegaj łamaniu wewnątrz etykiety, jeśli to możliwe */
+    -webkit-column-break-inside: avoid;
+             page-break-inside: avoid;
+                  break-inside: avoid;
+}
+
+/* Przycisk "Zaznacz/Odznacz" */
+#physis-export-cols-checkboxes #physis-select-all-cols {
+    margin-top: 10px;
+}
+
+/* Link do pokazywania/ukrywania */
+#physis-toggle-export-cols {
+    cursor: pointer;
+    text-decoration: underline;
+}
