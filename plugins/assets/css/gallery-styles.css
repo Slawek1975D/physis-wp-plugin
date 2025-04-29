@@ -1,0 +1,108 @@
+/* Główny kontener galerii */
+.physis-api-gallery-wrapper { /* <<< ZMIANA */
+    margin: 20px auto; /* Margines góra/dół i centrowanie */
+    max-width: 700px; /* Maksymalna szerokość głównego slidera - dostosuj */
+    padding: 0;
+    box-sizing: border-box;
+    /* Można dodać overflow: hidden;, jeśli slider miniaturek wizualnie "wychodzi" poza wrapper */
+}
+
+/* Główny slider Swiper */
+.papi-main-swiper { /* <<< ZMIANA */
+    width: 100%;
+    height: auto; /* Dopasowanie do zawartości */
+    margin-bottom: 20px; /* Odstęp pod głównym sliderem */
+    border: 1px solid #eee; /* Opcjonalna ramka */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opcjonalny cień */
+    position: relative; /* Potrzebne dla pozycjonowania strzałek */
+    overflow: hidden; /* Zapobiega wychodzeniu elementów poza kontener */
+}
+
+.papi-main-swiper .swiper-wrapper { /* <<< ZMIANA */
+     /* Domyślne style Swipera powinny wystarczyć */
+}
+
+
+.papi-main-swiper .swiper-slide { /* <<< ZMIANA */
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Upewnij się, że slajdy nie mają dodatkowych marginesów/paddingów */
+    margin: 0;
+    padding: 0;
+}
+
+.papi-main-swiper .swiper-slide img { /* <<< ZMIANA */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 700px; /* Opcjonalnie: Maksymalna wysokość głównego obrazu */
+    object-fit: contain; /* Pokaż cały obrazek */
+}
+
+/* Stylizacja strzałek */
+.papi-main-swiper .swiper-button-next, /* <<< ZMIANA */
+.papi-main-swiper .swiper-button-prev { /* <<< ZMIANA */
+    color: #007aff; /* Kolor strzałek - dostosuj */
+    background-color: rgba(255, 255, 255, 0.7); /* Lekkie tło dla lepszej widoczności */
+    border-radius: 50%;
+    width: 40px; /* Szerokość tła */
+    height: 40px; /* Wysokość tła */
+    margin-top: -20px; /* Wyśrodkowanie w pionie */
+}
+/* Dostosowanie rozmiaru samych ikon strzałek */
+.papi-main-swiper .swiper-button-next::after, /* <<< ZMIANA */
+.papi-main-swiper .swiper-button-prev::after { /* <<< ZMIANA */
+    font-size: 20px; /* Rozmiar ikony strzałki */
+}
+
+/* --- Sekcja Miniaturek --- */
+
+/* Kontener slidera miniaturek */
+.papi-thumbs-swiper { /* <<< ZMIANA */
+    height: 120px; /* Przykładowa wysokość kontenera miniaturek - dostosuj */
+    box-sizing: border-box;
+    padding: 10px 0;
+    overflow: hidden;
+    cursor: grab;
+}
+.papi-thumbs-swiper:active { /* <<< ZMIANA */
+    cursor: grabbing;
+}
+
+
+/* Poszczególne slajdy/kontenery miniaturek */
+.papi-thumbs-swiper .swiper-slide { /* <<< ZMIANA */
+    width: 100px;  /* <<< Szerokość miniaturki - dostosuj */
+    height: 100px; /* <<< Wysokość miniaturki - dostosuj */
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid transparent; /* Ramka dla aktywnej */
+}
+
+/* Aktywna miniaturka */
+.papi-thumbs-swiper .swiper-slide-thumb-active { /* <<< ZMIANA */
+    opacity: 1;
+    border-color: #007aff; /* Kolor ramki aktywnej */
+}
+
+/* Obrazek WEWNĄTRZ slajdu miniaturki */
+.papi-thumbs-swiper .swiper-slide img { /* <<< ZMIANA */
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Wypełnij kontener, przycinając jeśli trzeba */
+    /* lub object-fit: contain; jeśli wolisz widzieć cały obrazek */
+}
+
+/* Ukrywanie paska przewijania dla miniaturek (opcjonalne) */
+.papi-thumbs-swiper { scrollbar-width: none; -ms-overflow-style: none; } /* <<< ZMIANA */
+.papi-thumbs-swiper::-webkit-scrollbar { display: none; } /* <<< ZMIANA */
